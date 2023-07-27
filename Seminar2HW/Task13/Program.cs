@@ -1,14 +1,11 @@
 ﻿// Вывести 3 цифру заданного числа или сказать что её нет
 Console.Clear();
 Console.WriteLine("Введите число: ");
-int num = int.Parse(Console.ReadLine());
-if (num / 100 > 1)
+num = Convert.ToInt32(Console.ReadLine());
+while (num > 999)
 {
-    int result = (num % 10);
-    Console.WriteLine(result);
+    num /= 10;
 }
-else {
-    Console.WriteLine("Неправильное число");
-    return;
-}
+int ThirdDigit = num % 10;
+Console.WriteLine("3 цифра -> " + ThirdDigit);
 
